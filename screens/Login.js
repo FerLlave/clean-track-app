@@ -1,5 +1,9 @@
 import { Text, StyleSheet, View, Image, TextInput,TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
+import appFirebase from '../credentials'
+import{getAuth, signInWithEmailAndPassword} from 'firebase/auth'
+
+const auth = getAuth(appFirebase)
 
 export default function Login () {
   
@@ -13,10 +17,13 @@ export default function Login () {
         <View style={styles.card}>
           <View style={styles.cardText}>
               <TextInput placeholder='name@example.com' style= {{paddingHorizontal:15}}/>
+           
+              
+             
           </View>
           
           <View style={styles.cardText}>
-            <TextInput placeholder='Password' style= {{paddingHorizontal:15}}/>
+            <TextInput placeholder='Password' style= {{paddingHorizontal:15}} secureTextEntry={true}/>
           </View>
 
           <View style = {styles.mainButton}>

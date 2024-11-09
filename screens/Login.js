@@ -1,11 +1,26 @@
-import { Text, StyleSheet, View, Image, TextInput,TouchableOpacity } from 'react-native'
+import { Text, StyleSheet, View, Image, TextInput,TouchableOpacity,Alert } from 'react-native'
 import React, { useState } from 'react'
 import appFirebase from '../credentials'
 import{getAuth, signInWithEmailAndPassword} from 'firebase/auth'
+import AdminHome from './AdminHome'
 
 const auth = getAuth(appFirebase)
 
-export default function Login () {
+export default function Login (props) {
+
+  const [email, setEmail] = useState()
+  const [password, setPassword] = useState()
+
+  const login = async()=>{
+    try{
+      await signInWithEmailAndPassword(auth, email, password)
+      Alert.alert('accediendo')
+      props.navigation.navigate ('AdminHome') 
+    }catch(error){console.log(error);
+
+    }
+    
+  }
   
     return (
       <View style= {styles.mainClass}>

@@ -6,7 +6,7 @@ export default function Login () {
     return (
       <View style= {styles.mainClass}>
         <View>
-            <Text>Clean Track </Text>
+           
             <Image source={ require ('../assets/quiamLogo.jpg')} style={styles.profile} />
         </View>
 
@@ -19,9 +19,9 @@ export default function Login () {
             <TextInput placeholder='Password' style= {{paddingHorizontal:15}}/>
           </View>
 
-          <View>
-            <TouchableOpacity>
-              <Text> Sign In </Text>
+          <View style = {styles.mainButton}>
+            <TouchableOpacity style = {styles.cardButton}>
+              <Text style = {styles.textButton}> Sign In </Text>
             </TouchableOpacity>
           </View>
 
@@ -70,5 +70,20 @@ const styles = StyleSheet.create({
     backgroundColor:'#cccccc40',
     borderRadius:30,
     marginVertical:10
+  },
+  mainButton:{
+    alignItems:'center',
+  },
+  cardButton:{
+    backgroundColor:'#525FE1',
+    borderRadius:30,
+    paddingVertical:20,
+    width:150,
+    marginTop:20
+
+  },
+  textButton :{
+    textAlign:'center',
+    color:'white'
   }
 })

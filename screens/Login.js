@@ -2,7 +2,8 @@ import { Text, StyleSheet, View, Image, TextInput,TouchableOpacity,Alert } from 
 import React, { useState } from 'react'
 import appFirebase from '../credentials'
 import{getAuth, signInWithEmailAndPassword} from 'firebase/auth'
-import AdminHome from './AdminHome'
+import AdminHome from './AdminHome';
+
 
 const auth = getAuth(appFirebase)
 
@@ -31,14 +32,15 @@ export default function Login (props) {
 
         <View style={styles.card}>
           <View style={styles.cardText}>
-              <TextInput placeholder='name@example.com' style= {{paddingHorizontal:15}}/>
+              <TextInput placeholder='name@example.com' style= {{paddingHorizontal:15}}
+              onChangeText={(text)=>setEmail(text)}/>
            
-              
-             
+               
           </View>
           
           <View style={styles.cardText}>
-            <TextInput placeholder='Password' style= {{paddingHorizontal:15}} secureTextEntry={true}/>
+            <TextInput placeholder='Password' style= {{paddingHorizontal:15}} secureTextEntry={true}
+             onChangeText={(text)=>setPassword(text)}/>
           </View>
 
           <View style = {styles.mainButton}>

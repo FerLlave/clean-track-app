@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import appFirebase from '../credentials'
 import{getAuth, signInWithEmailAndPassword} from 'firebase/auth'
 import AdminHome from './AdminHome';
+import HousekepperHome from './HousekepperHome'
 
 
 const auth = getAuth(appFirebase)
@@ -11,13 +12,22 @@ export default function Login (props) {
 
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
+  const adminEmail ='admin@hotelquiam.com'
 
   const login = async()=>{
     try{
       await signInWithEmailAndPassword(auth, email, password)
       Alert.alert('accediendo')
-      props.navigation.navigate ('AdminHome') 
+
+      if (email === adminEmail){
+        props.navigation.navigate ('AdminHome') 
+      } else {
+        props.navigation.navigate('HousekepperHome')
+      } 
+      
+    
     }catch(error){console.log(error);
+      Alert.alert('El email o contrasena es incorrecto')
 
     }
     
@@ -44,7 +54,7 @@ export default function Login (props) {
           </View>
 
           <View style = {styles.mainButton}>
-            <TouchableOpacity style = {styles.cardButton}>
+            <TouchableOpacity style = {styles.cardButton} onPress={login}>
               <Text style = {styles.textButton}> Sign In </Text>
             </TouchableOpacity>
           </View>

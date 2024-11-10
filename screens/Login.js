@@ -27,7 +27,7 @@ export default function Login (props) {
       
     
     }catch(error){console.log(error);
-      Alert.alert('El email o contrasena es incorrecto')
+      Alert.alert('El email o contraseña es incorrecto')
 
     }
     

@@ -31,6 +31,82 @@ export default function AdminHome () {
       id: '6',
       title: '106',
     },
+    {
+      id: '7',
+      title: '107',
+    },
+    {
+      id: '8',
+      title: '108',
+    },
+    {
+      id: '9',
+      title: '109',
+    },
+    {
+      id: '10',
+      title: '110',
+    },
+    {
+      id: '11',
+      title: '111',
+    },
+    {
+      id: '12',
+      title: '201',
+    },
+    {
+      id: '13',
+      title: '202',
+    },
+    {
+      id: '14',
+      title: '203',
+    },
+    {
+      id: '15',
+      title: '204',
+    },
+    {
+      id: '16',
+      title: '205',
+    },
+    {
+      id: '17',
+      title: '206',
+    },
+    {
+      id: '18',
+      title: '207',
+    },
+    {
+      id: '19',
+      title: '208',
+    },
+    {
+      id: '20',
+      title: '209',
+    },
+    {
+      id: '21',
+      title: '210',
+    },
+    {
+      id: '22',
+      title: '211',
+    },
+    {
+      id: '23',
+      title: '212',
+    },
+    {
+      id: '24',
+      title: '213',
+    },
+    {
+      id: '25',
+      title: '214',
+    },
   ];
   
   const Item = ({title}) => (
@@ -79,11 +155,13 @@ const styles = StyleSheet.create({
   },
 
   item: {
+   
     backgroundColor: '#f9c2ff',
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
     backgroundColor:"#525FE1",
+    borderRadius:25,
 
   },
   title: {

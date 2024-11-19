@@ -48,7 +48,7 @@ export default function AdminHome () {
         <FlatList
           data={DATA}
           renderItem={({item}) => <Item title={item.title} />}
-          keyExtractor={item => item.id}
+          keyExtractor={item=> item.id}
         />
       </SafeAreaView>
     </SafeAreaProvider>
@@ -56,7 +56,7 @@ export default function AdminHome () {
      
 
       
-    )
+    );
   };
 
 
@@ -76,5 +76,19 @@ const styles = StyleSheet.create({
     height:160,
     
 
-  }
+  },
+
+  item: {
+    backgroundColor: '#f9c2ff',
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+    backgroundColor:"#525FE1",
+
+  },
+  title: {
+    fontSize: 20,
+    color: 'white',
+
+  },
 })

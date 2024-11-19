@@ -25,7 +25,7 @@ function MyStack() {
         headerStyle: { backgroundColor: "#525FE1"},
       }} />
       <Stack.Screen name="AdminHome" component={AdminHome} options={{
-        title:"Admin",
+        title:"Admin Hotel Quiam",
         headerTintColor:"white",
         headerTitleAlign:"center",
         headerStyle: { backgroundColor: "#525FE1"},

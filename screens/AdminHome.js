@@ -120,7 +120,7 @@ export default function AdminHome () {
     {
       id: '23',
       title: '212',
-      clean: fase,
+      clean: false,
     },
     {
       id: '24',
@@ -134,9 +134,12 @@ export default function AdminHome () {
     },
   ];
   
-  const Item = ({title}) => (
+  const Item = ({room}) => (
     <View style={styles.item}>
-      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.title}>{room.title}</Text>
+      <Text style = {styles.status}>
+        Estado:{room.clean ? 'Limpia' : 'Sucia'}
+      </Text>
     </View>
   );
   
@@ -148,7 +151,7 @@ export default function AdminHome () {
       <Image source={ require ('../assets/quiamhotel.jpg')} style={styles.adminImage} />
         <FlatList
           data={DATA}
-          renderItem={({item}) => <Item title={item.title} />}
+          renderItem={({item}) => <Item room={item} />}
           keyExtractor={item=> item.id}
         />
       </SafeAreaView>
@@ -194,4 +197,10 @@ const styles = StyleSheet.create({
     color: 'white',
 
   },
+
+  status:{
+    fontSize:16,
+    color:"white",
+    marginTop:5,
+  }
 })

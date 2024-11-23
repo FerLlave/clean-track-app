@@ -39,8 +39,10 @@ export default function AdminHome() {
         <FlatList
           data={RoomData}
           renderItem={({ item }) => <Item room={item} />}
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item) => item.title}
         />
+
+
       </SafeAreaView>
     </SafeAreaProvider>
   );

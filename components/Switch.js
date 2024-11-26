@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import {
   Animated,
   View,
-  Text,
   TouchableWithoutFeedback,
   StyleSheet,
 } from "react-native";

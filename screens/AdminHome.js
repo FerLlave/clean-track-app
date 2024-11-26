@@ -1,4 +1,77 @@
-import {
+import React from "react";
+import { StyleSheet, FlatList } from "react-native";
+import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
+import RoomData from "../components/RoomData";
+import RoomItem from "../components/RoomItem";
+import Header from "../components/Header";
+
+export default function AdminHome() {
+  return (
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container}>
+        <Header />
+        <FlatList
+          data={RoomData}
+          renderItem={({ item }) => <RoomItem room={item} />}
+          keyExtractor={(item) => item.title}
+        />
+      </SafeAreaView>
+    </SafeAreaProvider>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "white",
+    paddingTop: 5,
+    justifyContent: "center",
+  },
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* import {
   Text,
   StyleSheet,
   View,
@@ -8,8 +81,8 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
-import RoomData from "./RoomData";
-import Switch from "./Switch";
+import RoomData from "../components/RoomData";
+import Switch from "../components/Switch";
 
 export default function AdminHome() {
   const Item = ({ room }) => (
@@ -108,4 +181,4 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "white",
   },
-});
+});*/}

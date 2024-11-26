@@ -20,7 +20,7 @@ export default function AdminHome() {
 
       <View style={styles.switchContainer}>
 
-        <Switch> </Switch>
+        <Switch style={styles.switchContainer} > </Switch>
 {/* <Text style={styles.status}>{room.clean ? "Limpia" : "Sucia"}</Text> */} 
         
       </View>
@@ -36,7 +36,7 @@ export default function AdminHome() {
         />
         <View style={styles.header}>
           <Text style={styles.headerTitle}> Habitación </Text>
-          <Text style={styles.headerTitle}> Sucia/Limpia</Text>
+          <Text style={styles.headerTitle}> Limpia/Sucia</Text>
           <Text style={styles.headerTitle}>Asignacion</Text>
         </View>
 
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
 
   switchContainer: {
     marginTop:10,
-    marginLeft: 40,
+    marginLeft: 65,
     justifyContent: "center",
     alignItems: "center",
     

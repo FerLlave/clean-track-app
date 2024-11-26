@@ -1,17 +1,56 @@
-import { Switch } from "react-native-gesture-handler";
-import { useState, useEffect } from "react";
+
+import { useState, useEffect, useRef } from "react";
 import { Animated, View, Text, TouchableWithoutFeedback, StyleSheet } from "react-native";
 
 export default ({temporal, isButton}) => {
 
+    const AnimatedValues ={
+        toogle:useRef(new Animated.Value(0)).current
+
+    }
+
+    const {toogle} = AnimatedValues;
+
     const [clean, setClean] = useState(temporal)
 
+    useEffect ( () =>{
+       
+        handleAnimated();
+
+    }, [clean])
+
+    const handleAnimated = () =>{
+        Animated.timing(toogle,{
+            toValue: clean ? 1 : 0,
+            duration:275,
+            useNativeDriver:false
+        }).start();
+
+    }
+
+    const animatedStyles = {
+        transform: [
+            {
+                translateX: toogle.interpolate({
+                    
+                    inputRange:[0,1],
+                    outputRange: [2.5,25.4],
+                    extrapolate:'clamp',
+
+                }),
+                
+            },
+        ],
+    };
+
+    
+
     return (
-        <View style = {StyleSheet.container}>
+        <View style = {styles.container}>
             <TouchableWithoutFeedback onPressIn={() => setClean(!clean)}>
                 <View style ={[ styles.button, {backgroundColor:clean ? '#C08552' : '#49B6b6' }]}>
 
-                    <View style = {styles.circle}/>
+                    <Animated.View style = {[styles.circle, animatedStyles]}/>
                     <View style = {[styles.title, {left: clean ? 8 :27}]}/>
 
                   
@@ -30,7 +69,8 @@ const styles = StyleSheet.create({
     container:{
         justifyContent: "center",
         alignItems:"center",
-        bordeRadius:5,
+        borderRadius:5,
+        
 
     },
     button: {

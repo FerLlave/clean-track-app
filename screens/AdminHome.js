@@ -20,8 +20,7 @@ export default function AdminHome() {
 
       <View style={styles.switchContainer}>
 
-        <Switch> </Switch>
-{/* <Text style={styles.status}>{room.clean ? "Limpia" : "Sucia"}</Text> */} 
+        <Switch></Switch> 
         
       </View>
     </View>

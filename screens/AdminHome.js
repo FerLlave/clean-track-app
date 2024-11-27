@@ -1,18 +1,39 @@
-import React from "react";
+import React , { useState } from "react";
 import { StyleSheet, FlatList } from "react-native";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import RoomData from "../components/RoomData";
 import RoomItem from "../components/RoomItem";
 import Header from "../components/Header";
 
-export default function AdminHome() {
+const AdminHome = () => {
+
+  const [rooms, setRooms] = useState(RoomData);
+  const housekeeper = ["Caro", "Janet" ]; 
+
+  const handleAssign = (roomTitle, housekeeper) => {
+    const updatedRooms = rooms.map((room) =>
+      room.title === roomTitle ? { ...room, housekeeper } : room
+    );
+    setRooms(updatedRooms);
+  };
+
+
+
   return (
+
+
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
         <Header />
         <FlatList
-          data={RoomData}
-          renderItem={({ item }) => <RoomItem room={item} />}
+          data={rooms}
+          renderItem={({ item }) =>(
+             <RoomItem
+              room={item}
+              housekeepers={housekeeper}
+              onAssign= {handleAssign}
+            />
+  )}
           keyExtractor={(item) => item.title}
         />
       </SafeAreaView>
@@ -29,7 +50,7 @@ const styles = StyleSheet.create({
   },
 });
 
-
+export default AdminHome;
 
 
 

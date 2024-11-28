@@ -5,7 +5,7 @@ const RoomData = [
       id: '1',
       title: '101',
       clean: false,
-      housekeeper: null, 
+      housekeeper: null,
     },
     {
       id: '2',

@@ -8,7 +8,7 @@ import Header from "../components/Header";
 const AdminHome = () => {
 
   const [rooms, setRooms] = useState(RoomData);
-  const housekeeper = ["Caro", "Janet" ]; 
+  const housekeepers = ["Caro", "Janet" ]; 
 
   const handleAssign = (roomTitle, housekeeper) => {
     const updatedRooms = rooms.map((room) =>

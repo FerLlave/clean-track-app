@@ -31,7 +31,7 @@ function MyStack() {
         headerStyle: { backgroundColor: "#525FE1"},
       }}/>
       <Stack.Screen name="HousekepperHome" component={HousekepperHome} options={{
-        title:"Housekepper",
+        title:"Housekeeper",
         headerTintColor:"white",
         headerTitleAlign:"center",
         headerStyle: { backgroundColor: "#525FE1"},

@@ -45,19 +45,21 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   dropdown: {
-    width: 80,
-    height: 20,
+    width: 100,
+    height: 15,
     borderWidth: 1,
     borderColor: "#ccc",
     borderRadius: 5,
-    zIndex:1,
+    zIndex:10,
+    elevation:5,
     
   },
   dropdownContainer: {
-    width: 150,
+    width: 80,
     borderWidth: 1,
     borderColor: "#ccc",
-    zIndex:2,
+    zIndex:20,
+    elevation:10,
   },
 });
 

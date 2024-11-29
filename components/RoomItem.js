@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   itemRow: {
     flexDirection: "row",
     alignItems: "center",
-    padding:5,
+    padding:1,
     width: "100%",
     
   },
@@ -36,8 +36,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: "white",
     backgroundColor: "#525FE1",
-    borderRadius: 15,
-    padding: 10,
+    borderRadius: 5,
+    padding: 20,
     marginLeft: 27,
     marginTop: 10,
   },
@@ -49,9 +49,9 @@ const styles = StyleSheet.create({
   },
 
   assignmentContainer: {
-    flex: 0.6,
+    flex: 1,
     alignItems: "center",
-    marginLeft: 10,
+    marginLeft: 15,
   },
 });
 

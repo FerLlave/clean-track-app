@@ -30,7 +30,7 @@ const AdminHome = () => {
           renderItem={({ item }) =>(
              <RoomItem
               room={item}
-              housekeepers={housekeeper}
+              housekeepers={housekeepers}
               onAssign= {handleAssign}
             />
   )}

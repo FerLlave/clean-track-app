@@ -1,31 +1,39 @@
 import React, { useState } from "react";
 import { View, StyleSheet } from "react-native";
-import { Picker } from "@react-native-picker/picker";
+import DropdownPicker from 'react-native-dropdown-picker';
 
 const AssignmentSelect = ({ housekeepers = [], onAssign }) => {
-  const [selectedHousekeeper, setSelectedHousekeeper] = useState(null);
+  const [open, setOpen] = useState (false);
+  const [value,setValue] = useState (null);
+  const [items, setItems] = useState ([
+    {label : '-', value:null},
+    ...housekeepers.map((housekeeper) => ({
+      label:housekeeper,
+      value:housekeeper,
+    })),
+  ]);
 
-  const handleChange = (value) => {
-    setSelectedHousekeeper(value);
-    onAssign(value); // Llama al callback para actualizar la asignación
+  const handleChange = (value) =>{
+    setValue(value);
+    onAssign (value);
+  
   };
 
   return (
     <View style={styles.container}>
-      <Picker
-        selectedValue={selectedHousekeeper}
-        onValueChange={handleChange}
-        style={styles.picker}
-      >
-        <Picker.Item label="—" value={null} /> 
-        {(housekeepers || []).map((housekeeper) => (
-          <Picker.Item
-            key={housekeeper}
-            label={housekeeper}
-            value={housekeeper}
-          />
-        ))}
-      </Picker>
+      <DropdownPicker 
+      open={open}
+      value = {value}
+      items = {items}
+      setOpen= {setOpen}
+      setValue = {handleChange}
+      setItems = {setItems}
+      placeholder = ""
+      style = {styles.dropdown}
+      dropDownContainerStyle = {styles.dropDownContainer}
+      
+      />
+        
     </View>
   );
 };
@@ -36,9 +44,20 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  picker: {
+  dropdown: {
+    width: 80,
+    height: 20,
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 5,
+    zIndex:1,
+    
+  },
+  dropdownContainer: {
     width: 150,
-    height: 44,
+    borderWidth: 1,
+    borderColor: "#ccc",
+    zIndex:2,
   },
 });
 

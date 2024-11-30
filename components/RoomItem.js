@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
     paddingVertical:5,
     width: "100%",
     
+    
   },
 
   roomNumberContainer:{
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
     color: "white",
     backgroundColor: "#525FE1",
     borderRadius: 15,
-    padding: 20,
+    padding: 10,
   
   },
   switchContainer: {
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
   assignmentContainer: {
     flex: 1,
     justifyContent:'center',
-    alignItems: "flex-end",
+    alignItems: "center",
     
   },
 });

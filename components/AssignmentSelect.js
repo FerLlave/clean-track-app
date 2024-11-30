@@ -20,6 +20,7 @@ const AssignmentSelect = ({ housekeepers = [], onAssign }) => {
   };
 
   return (
+
     <View style={styles.container}>
       <DropdownPicker 
       open={open}
@@ -45,23 +46,22 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    zIndex:1000,
   },
   dropdown: {
     width: 100,
-    height: 15,
+    height: 10,
     borderWidth: 1,
     borderColor: "#ccc",
     borderRadius: 5,
-    zIndex:10,
-    elevation:5,
+    
     
   },
   dropdownContainer: {
     width: 80,
     borderWidth: 1,
     borderColor: "#ccc",
-    zIndex:20,
-    elevation:10,
+   
   },
 });
 

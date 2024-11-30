@@ -8,6 +8,7 @@ const Header = () => {
         source={require("../assets/quiamhotel.jpg")}
         style={styles.headerImage}
       />
+      
       <View style={styles.textContainer}>
         <Text style={styles.headerTitle}> Habitación </Text>
         <Text style={styles.headerTitle}> Limpia/Sucia </Text>
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     flexDirection: "row",
-    justifyContent: "space-evenly",
+    justifyContent: "space-between",
     width: "100%",
     paddingHorizontal: 10,
   },

@@ -29,8 +29,10 @@ const AssignmentSelect = ({ housekeepers = [], onAssign }) => {
       setValue = {handleChange}
       setItems = {setItems}
       placeholder = ""
+      dropDownDirection="TOP"
       style = {styles.dropdown}
       dropDownContainerStyle = {styles.dropDownContainer}
+
       
       />
         

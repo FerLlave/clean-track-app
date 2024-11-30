@@ -28,30 +28,38 @@ const styles = StyleSheet.create({
   itemRow: {
     flexDirection: "row",
     alignItems: "center",
-    padding:1,
+    justifyContent:'space-between',
+    paddingHorizontal:10,
+    paddingVertical:5,
     width: "100%",
     
   },
+
+  roomNumberContainer:{
+    flex:1,
+    justifyContent:'center',
+    alignItems:'flex-start'
+  },
+
   roomTitle: {
     fontSize: 20,
     color: "white",
     backgroundColor: "#525FE1",
-    borderRadius: 5,
+    borderRadius: 15,
     padding: 20,
-    marginLeft: 27,
-    marginTop: 10,
+  
   },
   switchContainer: {
-    marginTop: 10,
-    marginLeft: 65,
+    flex:1,
     justifyContent: "center",
     alignItems: "center",
   },
 
   assignmentContainer: {
     flex: 1,
-    alignItems: "center",
-    marginLeft: 15,
+    justifyContent:'center',
+    alignItems: "flex-end",
+    
   },
 });
 

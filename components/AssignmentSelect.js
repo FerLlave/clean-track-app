@@ -1,42 +1,27 @@
 import React, { useState } from "react";
 import { View, StyleSheet } from "react-native";
-import DropdownPicker from 'react-native-dropdown-picker';
+import { Picker } from '@react-native-picker/picker';
 
 const AssignmentSelect = ({ housekeepers = [], onAssign }) => {
-  const [open, setOpen] = useState (false);
-  const [value,setValue] = useState (null);
-  const [items, setItems] = useState ([
-    {label : '-', value:null},
-    ...housekeepers.map((housekeeper) => ({
-      label:housekeeper,
-      value:housekeeper,
-    })),
-  ]);
+  const [selectedValue, setSelectedValue] = useState(null);
 
-  const handleChange = (value) =>{
-    setValue(value);
-    onAssign (value);
-  
+  const handleChange = (value) => {
+    setSelectedValue(value);
+    onAssign(value);
   };
 
   return (
-
     <View style={styles.container}>
-      <DropdownPicker 
-      open={open}
-      value = {value}
-      items = {items}
-      setOpen= {setOpen}
-      setValue = {handleChange}
-      setItems = {setItems}
-      placeholder = ""
-      dropDownDirection="TOP"
-      style = {styles.dropdown}
-      dropDownContainerStyle = {styles.dropDownContainer}
-
-      
-      />
-        
+      <Picker
+        selectedValue={selectedValue}
+        onValueChange={(itemValue) => handleChange(itemValue)}
+        style={styles.picker}
+      >
+        <Picker.Item label="-" value={null} />
+        {housekeepers.map((housekeeper, index) => (
+          <Picker.Item label={housekeeper} value={housekeeper} key={index} />
+        ))}
+      </Picker>
     </View>
   );
 };
@@ -46,23 +31,24 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    zIndex:1000,
+    
+   
   },
-  dropdown: {
-    width: 100,
+ picker: {
+    width: 120,
     height: 10,
     borderWidth: 1,
     borderColor: "#ccc",
-    borderRadius: 5,
     
     
-  },
-  dropdownContainer: {
-    width: 80,
-    borderWidth: 1,
-    borderColor: "#ccc",
    
   },
+  pickerItem: {
+    fontSize: 16,
+    color: '#333', 
+    textAlign: 'center',
+  },
+  
 });
 
 export default AssignmentSelect;

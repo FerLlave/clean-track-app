@@ -17,7 +17,7 @@ const AssignmentSelect = ({ housekeepers = [], onAssign }) => {
         onValueChange={(itemValue) => handleChange(itemValue)}
         style={styles.picker}
       >
-        <Picker.Item label="-" value={null} />
+        <Picker.Item label="-" value={'none'} />
         {housekeepers.map((housekeeper, index) => (
           <Picker.Item label={housekeeper} value={housekeeper} key={index} />
         ))}

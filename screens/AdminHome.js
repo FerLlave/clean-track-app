@@ -5,17 +5,7 @@ import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import RoomItem from "../components/RoomItem";
 import Header from "../components/Header";
 
-const AdminHome = () => {
-
-  const [rooms, setRooms] = useState(RoomData);
-  const housekeepers = ["Caro", "Janet" ]; 
-
-  const handleAssign = (roomTitle, housekeeper) => {
-    const updatedRooms = rooms.map((room) =>
-      room.title === roomTitle ? { ...room, housekeeper } : room
-    );
-    setRooms(updatedRooms);
-  };
+const AdminHome = ({rooms, onAssign}) => {
 
 
 
@@ -30,8 +20,8 @@ const AdminHome = () => {
           renderItem={({ item }) =>(
              <RoomItem
               room={item}
-              housekeepers={housekeepers}
-              onAssign= {handleAssign}
+              housekeepers={['Caro','Janet']}
+              onAssign= {onAssign}
             />
   )}
           keyExtractor={(item) => item.title}

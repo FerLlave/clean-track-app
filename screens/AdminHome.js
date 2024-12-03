@@ -1,7 +1,7 @@
 import React , { useState } from "react";
 import { StyleSheet, FlatList } from "react-native";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
-import RoomData from "../components/RoomData";
+
 import RoomItem from "../components/RoomItem";
 import Header from "../components/Header";
 

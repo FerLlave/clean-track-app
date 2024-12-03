@@ -11,14 +11,19 @@ const RoomItem = ({ room, housekeepers, onAssign }) => {
       </View>
       
       <View style={styles.switchContainer}>
-        <Switch />
+        <Switch temporal={room.clean} isButton={!!onAssign} />
       </View>
-      
-      <View style={styles.assignmentContainer}>
-        <AssignmentSelect
+
+      <View  style={[
+          styles.assignmentContainer,
+          room.completed && { borderColor: "green", borderWidth: 2 },
+        ]}>
+           <AssignmentSelect
           housekeepers={housekeepers}
           onAssign={(value) => onAssign(room.title, value)}
-        />
+          />
+      
+      
       </View>
     </View>
   );
@@ -60,6 +65,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent:'center',
     alignItems: "center",
+    borderRadius: 5,
+    borderColor: "#ccc",
+    borderWidth: 1,
     
   },
 });

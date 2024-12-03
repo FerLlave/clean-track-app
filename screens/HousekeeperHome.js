@@ -1,11 +1,11 @@
 import { Text, StyleSheet, View } from 'react-native'
 import React from 'react'
 
-export default function HousekepperHome () {
+export default function HousekeeperHome () {
   
     return (
       <View>
-        <Text>housekepperHome</Text>
+        <Text>housekeeperHome</Text>
       </View>
     )
   };

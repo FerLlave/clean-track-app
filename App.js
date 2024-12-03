@@ -5,7 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import Login from './screens/Login';
 import AdminHome from './screens/AdminHome';
-import HousekepperHome from './screens/HousekepperHome';
+import HousekeeperHome from './screens/HousekeeperHome';
 
 
 
@@ -30,7 +30,7 @@ function MyStack() {
         headerTitleAlign:"center",
         headerStyle: { backgroundColor: "#525FE1"},
       }}/>
-      <Stack.Screen name="HousekepperHome" component={HousekepperHome} options={{
+      <Stack.Screen name="HousekeeperHome" component={HousekeeperHome} options={{
         title:"Housekeeper",
         headerTintColor:"white",
         headerTitleAlign:"center",

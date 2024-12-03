@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import appFirebase from '../credentials'
 import{getAuth, signInWithEmailAndPassword} from 'firebase/auth'
 import AdminHome from './AdminHome';
-import HousekepperHome from './HousekepperHome'
+import HousekeeperHome from './HousekeeperHome'
 
 
 const auth = getAuth(appFirebase)
@@ -22,7 +22,7 @@ export default function Login (props) {
       if (email === adminEmail){
         props.navigation.navigate ('AdminHome') 
       } else {
-        props.navigation.navigate('HousekepperHome')
+        props.navigation.navigate('HousekeeperHome')
       } 
       
     
